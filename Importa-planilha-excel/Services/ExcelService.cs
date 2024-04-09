@@ -39,10 +39,11 @@ namespace Importa_planilha_excel.Services
                         {
                             var produto = new ProdutoModel();
                             produto.Id = 0;
-                            produto.Nome = worksheet.Cells[linha, 1].Value.ToString();
-                            produto.Valor = Convert.ToDecimal(worksheet.Cells[linha, 2].Value);
-                            produto.Quantidade = Convert.ToInt32(worksheet.Cells[linha, 3].Value);
-                            produto.Marca = worksheet.Cells[linha, 4].Value.ToString();
+                            produto.Codigo = worksheet.Cells[linha, 1].Value.ToString();
+                            produto.Nome = worksheet.Cells[linha, 2].Value.ToString();
+                            produto.Valor = Convert.ToDecimal(worksheet.Cells[linha, 3].Value);
+                            produto.Quantidade = Convert.ToInt32(worksheet.Cells[linha, 4].Value);
+                            produto.Marca = worksheet.Cells[linha, 5].Value.ToString();
 
                             response.Add(produto);
                         }

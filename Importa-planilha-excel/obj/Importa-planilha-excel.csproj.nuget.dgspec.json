@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GITHUB\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj": {}
+    "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj": {}
   },
   "projects": {
-    "C:\\GITHUB\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj": {
+    "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GITHUB\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj",
+        "projectUniqueName": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj",
         "projectName": "Importa-planilha-excel",
-        "projectPath": "C:\\GITHUB\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj",
+        "projectPath": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj",
         "packagesPath": "C:\\Users\\LENOVO-EQP364\\.nuget\\packages\\",
-        "outputPath": "C:\\GITHUB\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel\\obj\\",
+        "outputPath": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

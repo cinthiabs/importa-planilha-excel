@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tIWS5HPBBltt1N+hG956VmiZcNN4/5taWdnCMDn9HkQPqgEj2kbjugLO41o95gBSQ4lW51tXK74nr8gFcshXnQ==",
+  "dgSpecHash": "Mk13y2BB7VtjUQm+cRmh/GVRQCfvnuPjBwHsrTNQwIQGVcdJ8TpTdjLKx2ovzE2muboeWvEG3onEC96us3NmAA==",
   "success": true,
-  "projectFilePath": "C:\\GITHUB\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj",
+  "projectFilePath": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\Importa-planilha-excel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO-EQP364\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\LENOVO-EQP364\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
