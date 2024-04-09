@@ -8,7 +8,7 @@
     
         <div class="input-group">
             <input type="file" class="form-control" name="form" />
-            <button class="btn btn-secondary" type="submit">Importar Excel</button>
+            <button class="btn btn-primary" type="submit">Importar Excel</button>
         </div>
     </form>
     <table class="table table-striped table-hover mt-5">
@@ -20,6 +20,7 @@
                 <th>Valor</th>
                 <th>Quantidade</th>
                 <th>Marca</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -34,9 +35,9 @@
                         <td>@produto.Valor</td>
                         <td>@produto.Quantidade</td>
                         <td>@produto.Marca</td>
+                        <td><button class="btn btn-danger" onclick="ExcluirProduto(@produto.Id)">Excluir</button></td>
                     </tr>
                 }
-
             }
             else
             {
@@ -48,3 +49,21 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    function ExcluirProduto(id) {
+        if (confirm('Tem certeza que deseja excluir este produto?')) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ExcluirProduto", "Home")',
+                data: { id: id },
+                success: function () {
+                    window.location.reload(); 
+                },
+                error: function () {
+                    alert('Ocorreu um erro ao tentar excluir o produto.');
+                }
+            });
+        }
+    }
+</script>

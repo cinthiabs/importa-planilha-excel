@@ -28,8 +28,8 @@ namespace Importa_planilha_excel.Controllers
             {
                 var streamFile = _excelInterface.LerStream(form);
                 var produtos = _excelInterface.LerXls(streamFile);
-                _excelInterface.SalvarDados(produtos);
-                
+               _excelInterface.SalvarDados(produtos);
+
                 return RedirectToAction("Index");
             }
             else
@@ -37,5 +37,20 @@ namespace Importa_planilha_excel.Controllers
                 return RedirectToAction("Index");
             }
        }
+        [HttpPost]
+        public async Task<IActionResult> ExcluirProduto(int id)
+        {
+            var produto = await _context.Produtos.FindAsync(id);
+            if (produto == null)
+            {
+                return NotFound();
+            }
+
+            _context.Produtos.Remove(produto);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+        
     }
 }

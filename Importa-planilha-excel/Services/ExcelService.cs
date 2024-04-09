@@ -1,5 +1,6 @@
 ﻿using Importa_planilha_excel.Data;
 using Importa_planilha_excel.Models;
+using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 
 namespace Importa_planilha_excel.Services
@@ -35,7 +36,7 @@ namespace Importa_planilha_excel.Services
                     int numeroDeLinhas = worksheet.Dimension.End.Row;
                     for(int linha = 2; linha <= numeroDeLinhas; linha++)
                     {
-                        if(worksheet.Cells[linha, 1].Value !=null && worksheet.Cells[linha, 4].Value != null)
+                        if(worksheet.Cells[linha, 1].Value !=null && worksheet.Cells[linha, 2].Value != null)
                         {
                             var produto = new ProdutoModel();
                             produto.Id = 0;
@@ -62,12 +63,17 @@ namespace Importa_planilha_excel.Services
         {
             try
             {
-                foreach(var produto in produtos)
+                foreach (var produto in produtos)
                 {
-                    _appDbContext.Add(produto);
-                    _appDbContext.SaveChanges();
-                }
+                    var existe = _appDbContext.Produtos.FirstOrDefault(p => p.Codigo == produto.Codigo);
 
+                    if (existe == null)
+                    {
+                        _appDbContext.Add(produto);
+                        
+                    }
+                }
+                _appDbContext.SaveChanges();
             }
             catch (Exception ex)
             {
