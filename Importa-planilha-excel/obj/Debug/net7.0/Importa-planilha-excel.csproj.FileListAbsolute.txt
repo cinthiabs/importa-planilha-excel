@@ -159,3 +159,10 @@ C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\obj\Debug\net7.0\refint\
 C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\obj\Debug\net7.0\Importa-planilha-excel.pdb
 C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\obj\Debug\net7.0\Importa-planilha-excel.genruntimeconfig.cache
 C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\obj\Debug\net7.0\ref\Importa-planilha-excel.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\ClosedXML.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\DocumentFormat.OpenXml.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\ExcelNumberFormat.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\Irony.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\SixLabors.Fonts.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\System.IO.Packaging.dll
+C:\GITHUB\importa-planilha-excel\Importa-planilha-excel\bin\Debug\net7.0\XLParser.dll

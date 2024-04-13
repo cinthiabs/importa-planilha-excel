@@ -2,13 +2,16 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <div class="container mt-5">
     <form method="post" asp-action="ImportaExcel" asp-controller="Home" enctype="multipart/form-data" class="text-center d-flex flex-column" >
-    
+
         <div class="input-group">
             <input type="file" class="form-control" name="form" />
             <button class="btn btn-primary" type="submit">Importar Excel</button>
+            <a href="@Url.Action("ExportarArquivo", "Home")" onclick="ExportarArquivo();" class="btn btn-success">
+                <i class="fas fa-arrow-alt-circle-down"></i>
+            </a>
         </div>
     </form>
     <table class="table table-striped table-hover mt-5">
@@ -42,7 +45,7 @@
             else
             {
                 <tr>
-                    <td colspan="5" class="text-center">Sem produtos cadastrados!</td>
+                    <td colspan="7" class="text-center">Sem produtos cadastrados!</td>
                 </tr>
             }
            
