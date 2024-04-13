@@ -7,5 +7,6 @@ namespace Importa_planilha_excel.Services
         MemoryStream LerStream(IFormFile formFile);
         List<ProdutoModel> LerXls(MemoryStream stream);
         void SalvarDados(List<ProdutoModel> produtos);
+        byte[] ExportarProdutosParaExcel(List<ProdutoModel> produtos);
     }
 }

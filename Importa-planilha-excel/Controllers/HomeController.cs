@@ -4,7 +4,6 @@ using Importa_planilha_excel.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Bibliography;
 
 
 
@@ -54,52 +53,36 @@ namespace Importa_planilha_excel.Controllers
 
             return RedirectToAction("Index");
         }
-        [HttpGet]
 
+        [HttpPost]
+        public async Task<IActionResult> ExcluirTodos()
+        {
+            var produtos = await _context.Produtos.ToListAsync();
+            if (produtos == null || produtos.Count == 0)
+            {
+                return RedirectToAction("Index");
+            }
+
+            _context.Produtos.RemoveRange(produtos);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
         public IActionResult ExportarArquivo()
         {
             var produtos = _context.Produtos.ToList();
             if (produtos.Count == 0){
                 return RedirectToAction("Index");
             }
-            var workbook = new XLWorkbook();
 
-            var worksheet = workbook.Worksheets.Add("Produtos");
-
-            worksheet.Cell(1, 1).Value = "Id";
-            worksheet.Cell(1, 2).Value = "Código";
-            worksheet.Cell(1, 3).Value = "Nome";
-            worksheet.Cell(1, 4).Value = "Valor";
-            worksheet.Cell(1, 5).Value = "Quantidade";
-            worksheet.Cell(1, 6).Value = "Marca";
-
-            int row = 2;
-            foreach (var produto in produtos)
-            {
-                worksheet.Cell(row, 1).Value = produto.Id;
-                worksheet.Cell(row, 2).Value = produto.Codigo;
-                worksheet.Cell(row, 3).Value = produto.Nome;
-                worksheet.Cell(row, 4).Value = produto.Valor;
-                worksheet.Cell(row, 5).Value = produto.Quantidade;
-                worksheet.Cell(row, 6).Value = produto.Marca;
-                row++;
-            }
-
-            worksheet.Columns().AdjustToContents();
-
+            var excelBytes = _excelInterface.ExportarProdutosParaExcel(produtos);
             var dataAtual = DateTime.Now.ToString("yyyyMMdd-HHmmss");
             var nomeDoArquivo = $"produtos-{dataAtual}.xlsx";
 
-            using (var stream = new MemoryStream())
-            {
-                workbook.SaveAs(stream);
-
-                byte[] excelBytes = stream.ToArray();
-
-                return File(excelBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", nomeDoArquivo);
-            }
+            return File(excelBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", nomeDoArquivo);
         }
-
 
     }
 }
