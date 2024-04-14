@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\wwwroot\\files\\Produtos.xlsx",
+      "PackagePath": "staticwebassets\\files\\Produtos.xlsx"
+    },
+    {
       "Id": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

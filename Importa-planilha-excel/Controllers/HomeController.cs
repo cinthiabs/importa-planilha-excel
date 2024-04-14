@@ -4,6 +4,7 @@ using Importa_planilha_excel.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.InkML;
 
 
 
@@ -26,18 +27,26 @@ namespace Importa_planilha_excel.Controllers
         [HttpPost]
         public IActionResult ImportaExcel(IFormFile form)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var streamFile = _excelInterface.LerStream(form);
-                var produtos = _excelInterface.LerXls(streamFile);
-                _excelInterface.SalvarDados(produtos);
+                if (ModelState.IsValid)
+                {
+                    var streamFile = _excelInterface.LerStream(form);
+                    var produtos = _excelInterface.LerXls(streamFile);
+                    _excelInterface.SalvarDados(produtos);
 
-                return RedirectToAction("Index");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
-            else
+            catch (Exception)
             {
                 return RedirectToAction("Index");
             }
+           
         }
         [HttpPost]
         public async Task<IActionResult> ExcluirProduto(int id)
@@ -57,16 +66,27 @@ namespace Importa_planilha_excel.Controllers
         [HttpPost]
         public async Task<IActionResult> ExcluirTodos()
         {
-            var produtos = await _context.Produtos.ToListAsync();
-            if (produtos == null || produtos.Count == 0)
+            try
+            {
+                var produtos = await _context.Produtos.ToListAsync();
+                if (produtos == null || produtos.Count == 0)
+                {
+                    return RedirectToAction("Index");
+                }
+                foreach (var produto in produtos)
+                {
+                   _context.Produtos.Remove(produto);
+                }
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
             {
                 return RedirectToAction("Index");
             }
 
-            _context.Produtos.RemoveRange(produtos);
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -78,8 +98,7 @@ namespace Importa_planilha_excel.Controllers
             }
 
             var excelBytes = _excelInterface.ExportarProdutosParaExcel(produtos);
-            var dataAtual = DateTime.Now.ToString("yyyyMMdd-HHmmss");
-            var nomeDoArquivo = $"produtos-{dataAtual}.xlsx";
+            var nomeDoArquivo = $"produtos.xlsx";
 
             return File(excelBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", nomeDoArquivo);
         }

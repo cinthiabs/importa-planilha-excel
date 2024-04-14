@@ -1,0 +1,10 @@
+#ignore arquivos de log
+screenshots/*.png
+*.html
+*.xml
+*.pdf
+*.xlsx
+*.mp4
+cypress.env.json
+# dependencies
+node_modules

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kWTJaZHsigL2aWGonAHIM5ZW1WFr2RNeUiGyNFNJGG8=",
+  "Hash": "9S7Yfu3P8Pt9iDghKHPpzKroSCODVbPAm0Qub9BOCWs=",
   "Source": "Importa-planilha-excel",
   "BasePath": "_content/Importa-planilha-excel",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\wwwroot\\files\\Produtos.xlsx",
+      "SourceId": "Importa-planilha-excel",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\wwwroot\\",
+      "BasePath": "_content/Importa-planilha-excel",
+      "RelativePath": "files/Produtos.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\Produtos.xlsx"
     },
     {
       "Identity": "C:\\GITHUB\\importa-planilha-excel\\Importa-planilha-excel\\wwwroot\\js\\site.js",

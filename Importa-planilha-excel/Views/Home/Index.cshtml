@@ -15,9 +15,8 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mais Opções</button>
             
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a href="@Url.Action("ExportarArquivo", "Home")" class="dropdown-item" download> Exportar dados</a>
-            
-            <button class="dropdown-item" onclick="ExcluirTodos()">Excluir todos os produtos</button>
+                <a href="@Url.Action("ExportarArquivo", "Home")" class="dropdown-item" download> Exportar dados</a>
+                <button class="dropdown-item" onclick="ExcluirTodos()">Excluir todos os produtos</button>
             </div>
         </div>
     </form>
@@ -27,7 +26,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Codigo</th>
+                <th>Código</th>
                 <th>Nome</th>
                 <th>Valor</th>
                 <th>Quantidade</th>
@@ -47,7 +46,7 @@
                         <td>@produto.Valor</td>
                         <td>@produto.Quantidade</td>
                         <td>@produto.Marca</td>
-                        <td><button class="btn btn-danger" onclick="ExcluirProduto(@produto.Id)">Excluir</button></td>
+                        <td><button class="btn btn-danger" id="actions" onclick="ExcluirProduto(@produto.Id)">Excluir</button></td>
                     </tr>
                 }
             }
@@ -84,13 +83,18 @@
                 type: "POST",
                 url: '@Url.Action("ExcluirTodos", "Home")',
                 success: function () {
-                    window.location.reload();
+                    reloadPage();
                 },
                 error: function () {
-                    alert('Ocorreu um erro ao tentar excluir todos os produtos.');
+                    reloadPage();
                 }
+                    
             });
         }
+    }
+
+    function reloadPage() {
+        location.reload(true);
     }
 
 </script>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Importa-planilha-excel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82cbeb3184cc9adf027a1c1c9deb8ef907eb0f37")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8ac1b6b81528c9a8d90299f0ad059e4e8b656da")]
 [assembly: System.Reflection.AssemblyProductAttribute("Importa-planilha-excel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Importa-planilha-excel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
